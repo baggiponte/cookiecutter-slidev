@@ -1,0 +1,29 @@
+name: Deploy pages
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/deploy.yml
+      - slides.md
+      - pages/**
+      - components/**
+      - public
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '{{ cookiecutter.requires_node }}'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run deploy
+      - name: Deploy pages
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
