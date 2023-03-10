@@ -1,6 +1,6 @@
 {
   "keynote_topic": "",
-  "keynote_shortname": "pymi-{{ cookiecutter.__topic }}",
+  "keynote_shortname": "pymi-{{ cookiecutter.keynote_topic.lower() }}",
   "keynote_date": "",
   "keynote_title": "Keynote title...",
   "keynote_host": "Keynote host...",
@@ -10,5 +10,5 @@
   "__author_job_title": "{{ cookiecutter.author_job_title.lower().title() }}",
   "__keynote_topic": "{{ cookiecutter.keynote_shortname.replace(' ', '-').replace('_', '-') }}",
   "__keynote_host": "{{ cookiecutter.keynote_host.lower().title() }}",
-  "__author_name": "{{ cookiecutter.author_name.lower().title() }}",
+  "__author_name": "{{ cookiecutter.author_name.lower().title() }}"
 }

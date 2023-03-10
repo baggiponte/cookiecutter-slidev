@@ -39,7 +39,7 @@ blockquote {
 
 <div class="absolute bottom-5">
 
-<a href="github.com/baggiponte/{{ cookiecutter.__keynote_shortname }}">
+<a href="github.com/baggiponte/{{ cookiecutter.keynote_shortname }}">
 
 <img height="25" width="25" align="left" style="margin-right:0.5em" src="https://cdn.simpleicons.org/github"> <u><i>source</i></u>
 
