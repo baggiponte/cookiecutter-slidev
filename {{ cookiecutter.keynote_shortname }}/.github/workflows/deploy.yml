@@ -26,4 +26,6 @@ jobs:
         with:
           build_dir: dist
         env:
+          {% raw %}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          {% endraw %}
