@@ -3,8 +3,7 @@ theme: default
 layout: cover
 highlighter: shiki
 colorSchema: light
-favicon: >-
-  https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars-logo-dark.svg
+favicon: favicon/url
 ---
 
 <style>

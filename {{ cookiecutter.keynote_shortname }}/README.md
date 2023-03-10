@@ -1,4 +1,4 @@
-# 🐻‍❄️ Get started with `{{ cookiecutter.__keynote_topic }}`
+# Get started with `{{ cookiecutter.__keynote_topic }}`
 
 Source code for the single page application (SPA) of the [`{{ cookiecutter.__keynote_topic }}`]()'s tutorial I held @[Python Milano](https://github.com/PythonMilano).
 
