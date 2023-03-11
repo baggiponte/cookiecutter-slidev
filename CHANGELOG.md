@@ -1,3 +1,9 @@
+## 0.2.1 (2023-03-11)
+
+### Fix
+
+- **ci**: run ci when package.json is updated
+
 ## 0.2.0 (2023-03-11)
 
 ### Feat
