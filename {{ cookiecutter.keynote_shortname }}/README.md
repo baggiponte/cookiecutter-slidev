@@ -10,10 +10,10 @@ Source code for the single page application (SPA) of the [`{{ cookiecutter.__key
 
 ```bash
 # with github CLI
-gh repo clone baggiponte/{{ cookiecutter.keynote_shortname }}
+gh repo clone {{ cookiecutter.author_github }}/{{ cookiecutter.keynote_shortname }}
 
 # with git
-git clone git@github.com:baggiponte/{{ cookiecutter.keynote_shortname }}
+git clone git@github.com:{{ cookiecutter.author_github }}/{{ cookiecutter.keynote_shortname }}
 ```
 
 2. Install `npm` and run the following:

@@ -5,6 +5,7 @@
   "keynote_title": "Keynote title...",
   "keynote_host": "Keynote host...",
   "author_name": "",
+  "author_github": "Author's github handle...",
   "author_job_title": "",
   "requires_node": "18",
   "__author_job_title": "{{ cookiecutter.author_job_title.lower().title() }}",
