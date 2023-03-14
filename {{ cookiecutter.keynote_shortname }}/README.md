@@ -1,9 +1,6 @@
 # Get started with `{{ cookiecutter.__keynote_topic }}`
 
-<center>
-
 [![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-slidev-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
-</center>
 
 Source code for the single page application (SPA) of the `{{ cookiecutter.__keynote_topic }}`'s tutorial I held @{{ cookiecutter.keynote_host }}.
 
