@@ -1,3 +1,18 @@
+## 0.3.0 (2023-03-14)
+
+### Feat
+
+- **cookie**: add cookiecutter badge to readme
+- **cookie**: use author's gh handle
+- **cookie**: update dependencies
+- **ci**: add manual dispatch option
+
+### Fix
+
+- **cookie**: fix badge and remove broken link in readme
+- **cookiecutter**: replace spaces in shortname
+- **npm**: use keynote shortname as package name
+
 ## 0.2.1 (2023-03-11)
 
 ### Fix
