@@ -2,10 +2,10 @@
 
 <center>
 
-[![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-chef-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
+[![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-slidev-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
 </center>
 
-Source code for the single page application (SPA) of the [`{{ cookiecutter.__keynote_topic }}`]()'s tutorial I held @[Python Milano](https://github.com/PythonMilano).
+Source code for the single page application (SPA) of the `{{ cookiecutter.__keynote_topic }}`'s tutorial I held @{{ cookiecutter.keynote_host }}.
 
 * 📽️ [Live]()
 
