@@ -1,3 +1,9 @@
+## 0.3.1 (2023-05-25)
+
+### Fix
+
+- update justfile scripts
+
 ## 0.3.0 (2023-03-14)
 
 ### Feat
