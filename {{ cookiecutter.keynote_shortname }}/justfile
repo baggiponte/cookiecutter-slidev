@@ -1,6 +1,11 @@
+set positional-arguments
+
 setup:
     git init
     npm install
+
+fmt *args="":
+    npm run format -- "$@"
 
 preview:
     npm run preview

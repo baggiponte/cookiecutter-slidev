@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "preview": "slidev --open",
+    "format": "slidev format",
     "build": "slidev build",
     "export": "slidev export",
     "deploy": "slidev build slides.md --base /{{ cookiecutter.keynote_shortname }}"
