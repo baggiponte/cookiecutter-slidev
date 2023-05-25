@@ -1,3 +1,13 @@
+## 0.3.4 (2023-05-25)
+
+### Fix
+
+- add formatting to justfile
+
+### Refactor
+
+- update README
+
 ## 0.3.3 (2023-05-25)
 
 ### Fix
