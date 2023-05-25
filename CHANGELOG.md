@@ -1,3 +1,9 @@
+## 0.3.3 (2023-05-25)
+
+### Fix
+
+- remove deploy command from justfile
+
 ## 0.3.2 (2023-05-25)
 
 ### Refactor
