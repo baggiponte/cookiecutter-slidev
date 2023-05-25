@@ -1,3 +1,9 @@
+## 0.3.2 (2023-05-25)
+
+### Refactor
+
+- reorder justfiles commands
+
 ## 0.3.1 (2023-05-25)
 
 ### Fix
