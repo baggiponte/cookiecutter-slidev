@@ -1,7 +1,19 @@
-bump:
-    cz bump --check-consistency 
-    git push
-    git push --tag
+setup:
+    git init
+    npm install
+
+preview:
+    npm run preview
+
+deploy:
+    npm run deploy
 
 dry-bump:
     cz bump --check-consistency --dry-run
+
+bump: dry-bump
+    cz bump
+    git push
+    git push --tag
+
+release: bump deploy

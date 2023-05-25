@@ -2,8 +2,8 @@
   "name": "{{ cookiecutter.keynote_shortname }}",
   "private": true,
   "scripts": {
+    "preview": "slidev --open",
     "build": "slidev build",
-    "dev": "slidev --open",
     "export": "slidev export",
     "deploy": "slidev build slides.md --base /{{ cookiecutter.keynote_shortname }}"
   },
