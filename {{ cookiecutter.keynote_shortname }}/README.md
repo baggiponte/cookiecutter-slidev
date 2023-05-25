@@ -4,7 +4,7 @@
 
 Source code for the single page application (SPA) of the `{{ cookiecutter.__keynote_topic }}`'s tutorial I held @{{ cookiecutter.keynote_host }}.
 
-* 📽️ [Live]()
+- 📽️ [Live]()
 
 ## 🛩️ How to run
 
@@ -22,7 +22,7 @@ git clone git@github.com:{{ cookiecutter.author_github }}/{{ cookiecutter.keynot
 
 ```bash
 npm install
-npm run dev
+npm run preview
 ```
 
 3. Visit http://localhost:3030
@@ -30,5 +30,5 @@ npm run dev
 > **Note**
 >
 > Credits:
-> 
-> * [`slidev`](https://github.com/slidevjs/slidev) is an amazing framework to build slides from markdown and host them.
+>
+> - [`slidev`](https://github.com/slidevjs/slidev) is an amazing framework to build slides from markdown and host them.
