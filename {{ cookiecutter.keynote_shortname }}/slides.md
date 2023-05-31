@@ -6,20 +6,11 @@ colorSchema: light
 favicon: favicon/url
 ---
 
-<style>
-h1 {
-  font-weight: 600 !important;
-}
+<!-- prettier-ignore-end -->
 
-h2 {
-  font-weight: 450 !important;
-  line-height: 1.8 !important;
-}
+# {{ cookiecutter.keynote_title }}
 
-blockquote {
-  font-size: 20 !important;
-}
-</style>
+<div class="absolute bottom-10">
 
 <div class="absolute top-10">
 
