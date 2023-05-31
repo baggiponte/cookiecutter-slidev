@@ -2,10 +2,10 @@ setup:
     git init
     npm install
 
-dry-bump:
+preview-bump:
     cz bump --check-consistency --dry-run
 
-bump: dry-bump
+bump: preview-bump
     cz bump
     git push
     git push --tag

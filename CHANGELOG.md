@@ -1,3 +1,20 @@
+## 0.4.0 (2023-05-31)
+
+### Feat
+
+- add qr codes in public/
+
+### Fix
+
+- set default argument in just fmt
+
+### Refactor
+
+- remove pages/ from deploy.yml
+- update cookiecutter vars
+- remove pages/
+- move styling into style.css
+
 ## 0.3.4 (2023-05-25)
 
 ### Fix
