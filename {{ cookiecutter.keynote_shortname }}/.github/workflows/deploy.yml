@@ -7,7 +7,6 @@ on:
     paths:
       - .github/workflows/deploy.yml
       - slides.md
-      - pages/**
       - components/**
       - public
       - package.json
