@@ -9,6 +9,12 @@ _A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on
 ## ⚡ Features
 
 - CI/CD automation with GitHub Actions
+
+> **Warning**
+>
+> ⚙️ Deploy to GitHub Pages
+> One manual step is needed for deploying the slideshow with GitHub actions. Go to your repo's `Settings` > `Actions` > `General` > `Workflow permissions` and select `Read and write permissions`.
+
 - Dependabot alerts
 
 ## 🛠️ How to
