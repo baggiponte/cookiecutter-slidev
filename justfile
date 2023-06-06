@@ -1,11 +1,12 @@
 setup:
-    git init
-    npm install
+    @if ! [[ -d .git ]]; then git init; fi
 
-preview-bump:
+dry-bump:
     cz bump --check-consistency --dry-run
 
-bump: preview-bump
+bump: dry-bump
     cz bump
     git push
     git push --tag
+
+alias release := bump
