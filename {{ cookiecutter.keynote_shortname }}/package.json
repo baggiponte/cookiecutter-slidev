@@ -1,15 +1,15 @@
 {
-  "name": "{{ cookiecutter.keynote_shortname }}",
+  "name": "pyconit-polars",
   "private": true,
   "scripts": {
     "preview": "slidev --open",
     "format": "slidev format",
     "build": "slidev build",
     "export": "slidev export",
-    "deploy": "slidev build slides.md --base /{{ cookiecutter.keynote_shortname }}"
+    "deploy": "slidev build slides.md --base /pyconit-polars"
   },
   "dependencies": {
-    "@slidev/cli": "^0.40.3",
+    "@slidev/cli": "^0.42.4",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   }
