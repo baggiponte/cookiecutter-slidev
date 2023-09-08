@@ -1,21 +1,119 @@
 set positional-arguments
 
-setup:
-    @if ! [[ -d .git ]]; then git init; fi
-    npm install
+# Create a local and/or remote repo, and install dependencies.
+init:
+  {% raw %}{{just_executable()}} needs npm npx{% endraw %}
 
-fmt *args="slides.md":
-    @npm run format -- "$@"
+  {% raw %}{{just_executable()}} ensure-repo{% endraw %}
 
-preview:
-    npm run preview
+  npm install
 
-dry-bump:
-    cz bump --check-consistency --dry-run
+  print "You still need to configure manually the PERSONAL_ACCESS_TOKEN. You can set it with:"
+  print "just config-ci"
+  print "Or use:"
+  print "gh secret set PERSONAL_ACCESS_TOKEN --body=<token> --app=actions"
+  print "⚠️ Do not pass the token as plain text, or it will persist in your shell history!"
 
-bump: dry-bump
-    cz bump
-    git push
-    git push --tag
+# Format slides
+@fmt *args="slides.md":
+  npx slidev format -- "$@"
+
+# Preview the slideshow
+@preview:
+  npx slidev preview
+
+@bump: check-commits test-build test-bump
+  cz bump
+  git push
+  git push --tag
 
 alias release := bump
+
+# Try to build the single-page application
+@test-build:
+  npx slidev build
+
+# Test whether a release is possible
+@test-bump:
+  {% raw %}{{just_executable()}} needs cz{% endraw %}
+
+  cz bump --check-consistency --dry-run
+
+# Check commits follow the conventional commit specification
+[private]
+check-commits:
+  #! /usr/bin/env zsh
+  
+  {% raw %}{{just_executable()}} needs cz{% endraw %}
+
+  set -euo pipefail
+
+  local revs
+  revs=($(git rev-list origin/main..HEAD))
+
+  if [[ $#revs -eq 0 ]]; then
+    echo "No commits to check."
+    exit 0
+  else
+    pdm run cz check --rev-range origin/main..HEAD
+  fi
+
+# Assert a command is available
+[private]
+needs *commands:
+  #!/usr/bin/env zsh
+  set -euo pipefail
+  for cmd in "$@"; do
+    if ! command -v $cmd &> /dev/null; then
+      echo "$cmd binary not found. Did you forget to install it?"
+      exit 1
+    fi
+  done
+
+# Ensure that the remote repo exists
+[private]
+ensure-repo:
+  #! /usr/bin/env zsh
+  
+  {% raw %}{{just_executable()}} needs git gh{% endraw %}
+
+  if ! [[ -d .git ]]; then
+    git init
+  fi
+
+  local user="{{ cookiecutter.author_github_handle }}"
+  local project_name="{{ cookiecutter.__repo_name }}"
+  local repo="{{ cookiecutter.author_github_handle }}/{{ cookiecutter.__repo_name }}"
+
+  if ! gh repo list "${user}" | grep --quiet "${project_name}" ; then
+    while true; do
+      print -n "No remote repository found. Do you want to create a new repository? (y/n): "
+      read -r ANSWER
+
+      case $ANSWER in
+        [Yy])
+          print -n "Do you want to create a private repository? (y/n): "
+          read -r PRIVATE
+
+          case $PRIVATE in
+            [Yy])
+              gh repo create "${repo}" --private --source=.
+              ;;
+            [Nn])
+              gh repo create "${repo}" --public --source=.
+              ;;
+            *)
+              print "Invalid input. Please enter 'y' or 'n'."
+              ;;
+          esac
+          break
+          ;;
+        [Nn])
+          exit 0
+          ;;
+        *)
+          print "Invalid input. Please enter 'y' or 'n'."
+          ;;
+      esac
+    done
+  fi
