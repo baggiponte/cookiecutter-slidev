@@ -82,8 +82,8 @@ ensure-repo:
   fi
 
   local user="{{ cookiecutter.author_github_handle }}"
-  local project_name="{{ cookiecutter.__repo_name }}"
-  local repo="{{ cookiecutter.author_github_handle }}/{{ cookiecutter.__repo_name }}"
+  local project_name="{{ cookiecutter.__keynote_reponame }}"
+  local repo="{{ cookiecutter.author_github_handle }}/{{ cookiecutter.__keynote_reponame }}"
 
   if ! gh repo list "${user}" | grep --quiet "${project_name}" ; then
     while true; do

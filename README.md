@@ -36,20 +36,18 @@ cookiecutter gh:baggiponte/cookiecutter-slidev
 
 ```json
 {
-  "keynote_topic": "",
-  "keynote_shortname": "pymi-{{ cookiecutter.keynote_topic.lower().replace(' ', '-') }}",
-  "keynote_title": "Keynote title...",
-  "keynote_host": "Keynote host...",
-  "author_name": "",
-  "author_github_handle": "Author's github handle...",
-  "author_job_title": "",
-  "requires_node": "18"
+  "keynote_title": "Keynote title",
+  "keynote_reponame": "A short name for the GitHub repository.",
+  "keynote_host": "Where the keynote will be presented",
+  "author_name": "The speakers's name",
+  "author_github_handle": "The speaker's GitHub handle",
+  "author_job_title": "The speaker's job title",
+  "requires_node": "18",
 }
 ```
 
-- `keynote_topic`: the keynote topic
-- `keynote_shortname`: a slug-like name, intended to be used with a prefix and the keynote's topic.
-- `keynote_title`: the keynote title.
+- `keynote_title`: the title that will be displayed.
+- `keynote_reponame`: will be used as the project name (and github repository).
 - `keynote_host`: where the keynote is held.
 - `author_name`: the author's name.
 - `author_github_handle`: the author's github handle.

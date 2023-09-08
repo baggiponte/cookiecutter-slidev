@@ -1,8 +1,8 @@
-# Get started with `{{ cookiecutter.__keynote_topic }}`
+# {{ cookiecutter.keynote_title }}
 
 [![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-slidev-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
 
-Source code for the single page application (SPA) of the `{{ cookiecutter.__keynote_topic }}`'s tutorial I held @{{ cookiecutter.keynote_host }}.
+Source code for the {{ cookiecutter.keynote_title }}, a talk held at {{ cookiecutter.keynote_host }}.
 
 - 📽️ [Live]()
 
@@ -12,10 +12,10 @@ Source code for the single page application (SPA) of the `{{ cookiecutter.__keyn
 
 ```bash
 # with github CLI
-gh repo clone {{ cookiecutter.author_github_handle }}/{{ cookiecutter.keynote_shortname }}
+gh repo clone {{ cookiecutter.author_github_handle }}/{{ cookiecutter.__keynote_reponame }}
 
 # with git
-git clone git@github.com:{{ cookiecutter.author_github_handle }}/{{ cookiecutter.keynote_shortname }}
+git clone git@github.com:{{ cookiecutter.author_github_handle }}/{{ cookiecutter.__keynote_reponame }}
 ```
 
 2. Install `npm` and run the following:

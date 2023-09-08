@@ -1,13 +1,12 @@
 {
-  "keynote_topic": "A short name for the GitHub repository. Will be sanitised.",
-  "keynote_shortname": "{{ cookiecutter.keynote_topic.lower().replace(' ', '-') }}",
   "keynote_title": "Keynote title",
+  "keynote_reponame": "A short name for the GitHub repository",
   "keynote_host": "Where the keynote will be presented",
   "author_name": "The speakers's name",
   "author_github_handle": "The speaker's GitHub handle",
   "author_job_title": "The speaker's job title",
   "requires_node": "18",
-  "__keynote_topic": "{{ cookiecutter.keynote_shortname.replace(' ', '-').replace('_', '-') }}",
+  "__keynote_reponame": "{{ cookiecutter.keynote_reponame.replace(' ', '-').replace('_', '-') }}",
   "__author_name": "{{ cookiecutter.author_name.lower().title() }}",
   "__author_job_title": "{{ cookiecutter.author_job_title.lower().title() }}"
 }
