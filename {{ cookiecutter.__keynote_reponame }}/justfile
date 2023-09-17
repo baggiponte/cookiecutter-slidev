@@ -1,62 +1,53 @@
+set shell := ["zsh", "-uc"]
 set positional-arguments
 
-# Create a local and/or remote repo, and install dependencies.
-init:
+# List all available recipes
+@help:
+  just --list
+
+# Install dependencies
+@install:
   {% raw %}{{just_executable()}} needs npm npx{% endraw %}
-
-  {% raw %}{{just_executable()}} ensure-repo{% endraw %}
-
   npm install
 
-  print "You still need to configure manually the PERSONAL_ACCESS_TOKEN. You can set it with:"
-  print "just config-ci"
-  print "Or use:"
-  print "gh secret set PERSONAL_ACCESS_TOKEN --body=<token> --app=actions"
-  print "⚠️ Do not pass the token as plain text, or it will persist in your shell history!"
+  print "⚠️ A manual step is required to deploy the slideshow to GitHub Pages:"
+  print "Go to the repository Settings -> Pages -> Source and select GitHub Actions."
 
-# Format slides
+# Create a git and GitHub repo, install dependencies
+@init: ensure-git ensure-github install
+
+# Format the slides
 @fmt *args="slides.md":
   npx slidev format -- "$@"
 
-# Preview the slideshow
-@preview:
-  npx slidev preview
+# Display a live-preview of the slideshow
+@preview slides="slides.md":
+  npx slidev --open -- "$1"
 
-@bump: check-commits test-build test-bump
+# Build the slides to HTML
+@build:
+  npx slidev build --base=/{{ cookiecutter.__keynote_reponame }}
+
+# Clean build dir
+@clean:
+  rm -rf dist
+
+# Test whether slides can be built to HTML
+@test-build: build clean
+
+# Test the release bump
+@test-bump:
+  {% raw %}{{just_executable()}} needs cz{% endraw %}
+  cz bump --check-consistency --dry-run
+
+# Test the release workflow
+@test-release: fmt test-build test-bump
+
+# Bump the slideshow version
+@release: test-release
   cz bump
   git push
   git push --tag
-
-alias release := bump
-
-# Try to build the single-page application
-@test-build:
-  npx slidev build
-
-# Test whether a release is possible
-@test-bump:
-  {% raw %}{{just_executable()}} needs cz{% endraw %}
-
-  cz bump --check-consistency --dry-run
-
-# Check commits follow the conventional commit specification
-[private]
-check-commits:
-  #! /usr/bin/env zsh
-  
-  {% raw %}{{just_executable()}} needs cz{% endraw %}
-
-  set -euo pipefail
-
-  local revs
-  revs=($(git rev-list origin/main..HEAD))
-
-  if [[ $#revs -eq 0 ]]; then
-    echo "No commits to check."
-    exit 0
-  else
-    pdm run cz check --rev-range origin/main..HEAD
-  fi
 
 # Assert a command is available
 [private]
@@ -65,42 +56,39 @@ needs *commands:
   set -euo pipefail
   for cmd in "$@"; do
     if ! command -v $cmd &> /dev/null; then
-      echo "$cmd binary not found. Did you forget to install it?"
+      print "$cmd binary not found. Did you forget to install it?"
       exit 1
     fi
   done
 
-# Ensure that the remote repo exists
+# Create a local git repo if not in one
 [private]
-ensure-repo:
+@ensure-git:
   #! /usr/bin/env zsh
-  
-  {% raw %}{{just_executable()}} needs git gh{% endraw %}
-
-  if ! [[ -d .git ]]; then
+  {% raw %}{{just_executable()}} needs git{% endraw %}
+  if ! git rev-parse --is-inside-work-tree &> /dev/null; then
     git init
   fi
 
-  local user="{{ cookiecutter.author_github_handle }}"
-  local project_name="{{ cookiecutter.__keynote_reponame }}"
-  local repo="{{ cookiecutter.author_github_handle }}/{{ cookiecutter.__keynote_reponame }}"
-
-  if ! gh repo list "${user}" | grep --quiet "${project_name}" ; then
+# Ask to create a remote repo if not exists
+[private]
+ensure-github:
+  #! /usr/bin/env zsh
+  if ! gh repo list baggiponte | grep --quiet "/\b{{ cookiecutter.__keynote_reponame }}\b"; then
     while true; do
       print -n "No remote repository found. Do you want to create a new repository? (y/n): "
-      read -r ANSWER
+      read -r REPLY
 
-      case $ANSWER in
+      case $REPLY in
         [Yy])
           print -n "Do you want to create a private repository? (y/n): "
           read -r PRIVATE
-
           case $PRIVATE in
             [Yy])
-              gh repo create "${repo}" --private --source=.
+              gh repo create baggiponte/{{ cookiecutter.__keynote_reponame }} --private --source=.
               ;;
             [Nn])
-              gh repo create "${repo}" --public --source=.
+              gh repo create baggiponte/{{ cookiecutter.__keynote_reponame }} --public --source=.
               ;;
             *)
               print "Invalid input. Please enter 'y' or 'n'."
@@ -109,7 +97,25 @@ ensure-repo:
           break
           ;;
         [Nn])
-          exit 0
+          break
+          ;;
+        *)
+          print "Invalid input. Please enter 'y' or 'n'."
+          ;;
+      esac
+    done
+  else 
+    while true; do
+      print -n "A repo with this name already exists. Do you want to add it as a remote? (y/n): "
+      read -r REPLY
+
+      case $REPLY in
+        [Yy])
+          git remote add origin git@github.com:baggiponte/{{ cookiecutter.__keynote_reponame }}
+          break
+          ;;
+        [Nn])
+          break
           ;;
         *)
           print "Invalid input. Please enter 'y' or 'n'."
@@ -117,3 +123,4 @@ ensure-repo:
       esac
     done
   fi
+
