@@ -1,3 +1,27 @@
+## 0.5.0 (2023-09-17)
+
+### Feat
+
+- **just**: improve just recipes
+- **just**: update justfile
+
+### Fix
+
+- **cookie**: prepend / to img paths
+- **cookie**: set default project name to keynote reponame
+- **cookie**: bump node to v20
+- **just**: mark just variables as {{% raw %}}
+- **just**: parentheses, again
+- **just**: you guessed it
+
+### Refactor
+
+- **cookie**: clean package.json
+- **ci**: do not depend on third party actions
+- **css**: tweak line height
+- **readme**: improve readme
+- **cookie**: rename cookie fields
+
 ## 0.4.2 (2023-06-06)
 
 ### Fix
