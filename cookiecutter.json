@@ -5,7 +5,7 @@
   "author_name": "The speakers's name",
   "author_github_handle": "The speaker's GitHub handle",
   "author_job_title": "The speaker's job title",
-  "requires_node": "18",
+  "requires_node": "20",
   "__keynote_reponame": "{{ cookiecutter.keynote_reponame.replace(' ', '-').replace('_', '-') }}",
   "__author_name": "{{ cookiecutter.author_name.lower().title() }}",
   "__author_job_title": "{{ cookiecutter.author_job_title.lower().title() }}"
