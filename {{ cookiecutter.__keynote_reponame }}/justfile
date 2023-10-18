@@ -14,7 +14,7 @@ set positional-arguments
   print "Go to the repository Settings -> Pages -> Source and select GitHub Actions."
 
 # Create a git and GitHub repo, install dependencies
-@init: ensure-git ensure-github install
+init: ensure-git ensure-github install
 
 # Format the slides
 @fmt *args="slides.md":
@@ -63,7 +63,7 @@ needs *commands:
 
 # Create a local git repo if not in one
 [private]
-@ensure-git:
+ensure-git:
   #! /usr/bin/env zsh
   {% raw %}{{just_executable()}} needs git{% endraw %}
   if ! git rev-parse --is-inside-work-tree &> /dev/null; then
