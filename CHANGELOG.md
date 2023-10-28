@@ -1,3 +1,9 @@
+## 0.6.2 (2023-10-28)
+
+### Fix
+
+- **build**: restore jinja vars
+
 ## 0.6.1 (2023-10-28)
 
 ### Refactor
