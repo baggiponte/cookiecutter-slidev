@@ -1,3 +1,20 @@
+## 0.6.0 (2023-10-28)
+
+### Feat
+
+- **ci**: add update recipe
+
+### Fix
+
+- **build**: update deps
+- **just**: use silent commands
+- **ci**: use raw marker
+
+### Refactor
+
+- **build**: remove npmrc
+- **ci**: monthly updates for dependabot
+
 ## 0.5.0 (2023-09-17)
 
 ### Feat
