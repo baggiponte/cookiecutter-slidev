@@ -1,3 +1,9 @@
+## 0.6.1 (2023-10-28)
+
+### Refactor
+
+- **build**: update min versions
+
 ## 0.6.0 (2023-10-28)
 
 ### Feat
