@@ -2,7 +2,7 @@
 
 ![logo](./assets/cookiecutter-slidev.png)
 
-_A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on GitHub Pages_
+A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on GitHub Pages
 
 </center>
 
