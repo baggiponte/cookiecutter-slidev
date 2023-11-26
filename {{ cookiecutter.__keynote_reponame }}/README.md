@@ -4,7 +4,7 @@
 
 Source code for the talk *{{ cookiecutter.keynote_title.title() }}* at {{ cookiecutter.keynote_host }}.
 
-- 📽️ [Live](https://www.youtube.com/watch?v=XsxrhGlkyk0)
+- 📽️ [Live]()
 
 ## 🛩️ How to run
 
