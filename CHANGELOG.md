@@ -1,3 +1,9 @@
+## 0.6.3 (2023-11-26)
+
+### Fix
+
+- remove default link from readme
+
 ## 0.6.2 (2023-10-28)
 
 ### Fix
