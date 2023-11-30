@@ -1,3 +1,11 @@
+## 0.6.4 (2023-11-30)
+
+### Refactor
+
+- update dependency versions
+- update spacing
+- add prompt descriptions
+
 ## 0.6.3 (2023-11-26)
 
 ### Fix
