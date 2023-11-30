@@ -37,13 +37,13 @@ cookiecutter gh:baggiponte/cookiecutter-slidev
 
 ```json
 {
-  "keynote_title": "Keynote title",
-  "keynote_reponame": "A short name for the GitHub repository.",
-  "keynote_host": "Where the keynote will be presented",
+  "keynote_reponame": "The GitHub repository slug",
+  "keynote_title": "The title of the talk/workshop/keynote",
+  "keynote_host": "The conference or host",
   "author_name": "The speakers's name",
   "author_github_handle": "The speaker's GitHub handle",
   "author_job_title": "The speaker's job title",
-  "requires_node": "20", // must be greater than 14!
+  "requires_node": "Requires at least node 14."
 }
 ```
 
