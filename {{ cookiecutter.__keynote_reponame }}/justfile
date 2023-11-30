@@ -10,7 +10,7 @@ set positional-arguments
   {% raw %}{{just_executable()}} needs npm npx{% endraw %}
   npm install
 
-  print "⚠️ A manual step is required to deploy the slideshow to GitHub Pages:"
+  print "\n⚠️ A manual step is required to deploy the slideshow to GitHub Pages:"
   print "Go to the repository Settings -> Pages -> Source and select GitHub Actions."
 
 # Update dependencies
@@ -108,7 +108,7 @@ ensure-github:
           ;;
       esac
     done
-  else 
+  else
     while true; do
       print -n "A repo with this name already exists. Do you want to add it as a remote? (y/n): "
       read -r REPLY
