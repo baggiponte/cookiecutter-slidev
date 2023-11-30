@@ -1,3 +1,9 @@
+## 0.6.5 (2023-11-30)
+
+### Fix
+
+- print warning after a blank line
+
 ## 0.6.4 (2023-11-30)
 
 ### Refactor
