@@ -1,3 +1,10 @@
+## 0.6.6 (2023-12-01)
+
+### Refactor
+
+- update style.css
+- update node setup action to v4
+
 ## 0.6.5 (2023-11-30)
 
 ### Fix
