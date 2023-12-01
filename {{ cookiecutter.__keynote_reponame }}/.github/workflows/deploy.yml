@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.tool-versions'
 
@@ -38,7 +38,7 @@ jobs:
 
   deploy:
     needs: build
-    
+
     environment:
       name: github-pages
       url: {% raw %}${{ steps.deployment.outputs.page_url }}{% endraw %}
