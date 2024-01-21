@@ -8,7 +8,6 @@ A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on 
 
 ## ⚡ Features
 
-- Dependabot updates
 - CI/CD automation with GitHub Actions
 
 > **Warning**
