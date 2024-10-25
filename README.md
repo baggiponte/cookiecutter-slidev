@@ -19,18 +19,12 @@ A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on 
 
 ## 🛠️ How to
 
-Install `cookiecutter` and run the command:
+1. Install [`cookiecutter`](https://cookiecutter.readthedocs.io/en/2.0.2/installation.html#alternate-installations).
+2. Run the following:
 
 ```bash
-pipx install cookiecutter
-
 cookiecutter gh:baggiponte/cookiecutter-slidev
 ```
-
-> **Warning**
->
-> 🔎 Why `pipx`?
-> `pip install --user` is not recommended, as it does not ensure dependency isolation. For this purpose, the [Python Packaging Authority (PyPA)](https://www.pypa.io/en/latest/) advises to use [`pipx`](https://pypa.github.io/pipx/). `pipx` installs and runs python CLIs in isolated environments. To install it, follow the instructions [here](https://pypa.github.io/pipx/#install-pipx).
 
 ## 📝 Fields to fill in
 
@@ -42,7 +36,6 @@ cookiecutter gh:baggiponte/cookiecutter-slidev
   "author_name": "The speakers's name",
   "author_github_handle": "The speaker's GitHub handle",
   "author_job_title": "The speaker's job title",
-  "requires_node": "Requires at least node 14."
 }
 ```
 
