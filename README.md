@@ -10,7 +10,7 @@ A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on 
 
 - CI/CD automation with GitHub Actions
 
-> **Warning**
+> [!WARNING]
 >
 > ⚙️ Deploy to GitHub Pages
 > One manual step is needed for deploying the slideshow with GitHub actions. Go to your repo's `Settings` > `Pages` > `Build and deployment` > `Source`
@@ -39,7 +39,7 @@ cookiecutter gh:baggiponte/cookiecutter-slidev
 }
 ```
 
-## ⚠️ Warning
-
-* The file `slides.md` sources QR code from `./public/` that point to my personal GitHub and LinkedIn profiles. This is just an example: make sure you remove them!
-* The `public/qr-github.svg` is missing: you should generate a new one, e.g. using [qrcode-monkey.com](https://www.qrcode-monkey.com/) (not affiliated, just the one I use).
+> [!WARNING]
+>
+> * The file `slides.md` sources QR code from `./public/` that point to my personal GitHub and LinkedIn profiles. This is just an example: make sure you remove them!
+> * The `public/qr-github.svg` is missing: you should generate a new one, e.g. using [qrcode-monkey.com](https://www.qrcode-monkey.com/) (not affiliated, just the one I use).
