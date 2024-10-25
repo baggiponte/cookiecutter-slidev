@@ -19,18 +19,16 @@ A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on 
 
 ## 🛠️ How to
 
-Install `cookiecutter` and run the command:
+1. Install `cookiecutter`. Using [`uv`](https://docs.astral.sh/uv/getting-started/installation/) is recommended:
 
 ```bash
-pipx install cookiecutter
+uv tool install cookiecutter
 
+2. Run the following command:
+
+```bash
 cookiecutter gh:baggiponte/cookiecutter-slidev
 ```
-
-> **Warning**
->
-> 🔎 Why `pipx`?
-> `pip install --user` is not recommended, as it does not ensure dependency isolation. For this purpose, the [Python Packaging Authority (PyPA)](https://www.pypa.io/en/latest/) advises to use [`pipx`](https://pypa.github.io/pipx/). `pipx` installs and runs python CLIs in isolated environments. To install it, follow the instructions [here](https://pypa.github.io/pipx/#install-pipx).
 
 ## 📝 Fields to fill in
 
