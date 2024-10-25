@@ -1,3 +1,9 @@
+## 0.6.8 (2024-10-25)
+
+### Fix
+
+- replace node with bun in CI
+
 ## 0.6.7 (2024-10-25)
 
 ### Fix
