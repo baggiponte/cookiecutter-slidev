@@ -8,12 +8,16 @@ Source code for the talk *{{ cookiecutter.keynote_title.title() }}* at {{ cookie
 
 ## 🛩️ How to run
 
+### Prerequisites
+
 Make sure you have installed the following:
 
-* `git` (of course)
-* GitHub CLI: `gh` (optional)
-* `node.js`
-* `just` is a command runner (optional, recommended for contributing)
+* [`git`](https://git-scm.com/).
+* [`bun`](https://bun.sh/) (but you can use any other JavaScript runtime).
+* [`just`](https://just.systems/), a command runner.
+  * The [`justfile`](./justfile) contains a bunch of utilities to ease development. Though optional, it's highly recommended.
+* [`gh`](https://cli.github.com/), the GitHub CLI.
+  * This is optional too, but recommended.
 
 1. Clone the repo
 
@@ -38,9 +42,6 @@ git clone git@github.com:{{ cookiecutter.author_github_handle }}/{{ cookiecutter
 ```bash
 # with the command runner
 just install
-
-# with npm
-npm install
 ```
 
 3. Open the slideshow locally
@@ -48,22 +49,33 @@ npm install
 ```bash
 # with the command runner
 just preview
-
-# with npx
-npx slidev --open -- slides.md
 ```
 
 4. Visit http://localhost:3030
 
 ## 🤗 contributing
 
-Install the dependencies [above](,/README.md#%EF%B8%8F-how-to-run) (`just` is highly recommended) and the following:
+### Prerequisites
 
-* [`commitizen`](https://commitizen-tools.github.io/commitizen/) is a release management tool. It's used to release new versions.
+* Install all of the the dependencies [above](,/README.md#%EF%B8%8F-how-to-run) and [`commitizen`](https://commitizen-tools.github.io/commitizen/). `commitizen` is a release management tool. It's used to release new versions.
 
-1. Fork the repo
+### Release workflow
+
+1. Fork the repo:
+
+```bash
+gh repo fork {{ cookiecutter.author_github_handle }}/{{ cookiecutter.__keynote_reponame }}
+```
+
 2. Create your own branch.
-3. Before opening a PR, run the following:
+
+```bash
+git checkout -b your-branch-name
+```
+
+3. Commit following the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+4. Before pushing your changes, run the following command to check if the version bump is possible.
 
 ```bash
 just test-release
