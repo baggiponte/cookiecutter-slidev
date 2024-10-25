@@ -36,7 +36,6 @@ cookiecutter gh:baggiponte/cookiecutter-slidev
   "author_name": "The speakers's name",
   "author_github_handle": "The speaker's GitHub handle",
   "author_job_title": "The speaker's job title",
-  "requires_node": "Requires at least node 14."
 }
 ```
 
