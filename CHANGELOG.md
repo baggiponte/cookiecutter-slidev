@@ -1,3 +1,15 @@
+## 0.6.7 (2024-10-25)
+
+### Fix
+
+- remove node min version
+- remove old package-lock
+- remove dependabot config
+
+### Refactor
+
+- update justfile to use bun
+
 ## 0.6.6 (2023-12-01)
 
 ### Refactor
