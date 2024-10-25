@@ -19,12 +19,8 @@ A `cookiecutter` template to generate beautiful `sli.dev` keynotes to deploy on 
 
 ## 🛠️ How to
 
-1. Install `cookiecutter`. Using [`uv`](https://docs.astral.sh/uv/getting-started/installation/) is recommended:
-
-```bash
-uv tool install cookiecutter
-
-2. Run the following command:
+1. Install [`cookiecutter`](https://cookiecutter.readthedocs.io/en/2.0.2/installation.html#alternate-installations).
+2. Run the following:
 
 ```bash
 cookiecutter gh:baggiponte/cookiecutter-slidev
